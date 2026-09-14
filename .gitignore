@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+code/logs/
+data/results/raw/
+data/results/parsed/
+data/analysis/reproduction*/
+data/analysis/layout_validation/
+*.zip
+.DS_Store
+Thumbs.db

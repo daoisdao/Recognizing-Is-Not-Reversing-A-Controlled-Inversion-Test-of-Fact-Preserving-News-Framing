@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying paper when using this benchmark or code."
+title: "Recognizing Is Not Reversing: A Controlled Inversion Test of Fact-Preserving News Framing"
+type: software
+version: 0.1.0
+repository-code: "https://github.com/daoisdao/Recognizing-Is-Not-Reversing-A-Controlled-Inversion-Test-of-Fact-Preserving-News-Framing"
+authors:
+  - family-names: Liu
+    given-names: Yi
+    affiliation: University of Science and Technology of China
+    email: scnuliuyi@mail.ustc.edu.cn
+license: Apache-2.0
+keywords:
+  - news framing
+  - large language models
+  - controlled inversion
+  - computational social science

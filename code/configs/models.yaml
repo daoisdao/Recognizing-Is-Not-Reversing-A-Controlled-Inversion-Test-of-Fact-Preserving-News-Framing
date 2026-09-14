@@ -1,0 +1,54 @@
+generator:
+  family: glm5.2
+  model_id: glm-5-2-260617
+  model_id_env: GLM52_MODEL_ID
+  api_key_env: GLM52_API_KEY
+  base_url_env: GLM52_BASE_URL
+  base_url: https://ark.cn-beijing.volces.com/api/v3/chat/completions
+  endpoint_label: volcengine-ark-cn-beijing
+  accepted_returned_model_ids:
+  - glm-5-2-260617
+  temperature: 0.0
+  reasoning: 'off'
+  tools: false
+  web: false
+  timeout_seconds: 120
+  max_output_tokens: 2500
+evaluated:
+- family: qwen
+  model_id_env: QWEN_MODEL_ID
+  api_key_env: QWEN_API_KEY
+  base_url_env: QWEN_BASE_URL
+  main_reasoning: off_or_minimum
+  reasoning_ablation: high_strength_only
+  temperature: 0.0
+  model_id: qwen-plus
+  base_url: https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
+  endpoint_label: dashscope.aliyuncs.com
+- family: deepseek
+  model_id_env: DEEPSEEK_MODEL_ID
+  api_key_env: DEEPSEEK_API_KEY
+  base_url_env: DEEPSEEK_BASE_URL
+  main_reasoning: false
+  reasoning_ablation: high_strength_only
+  temperature: 0.0
+  model_id: deepseek-v4-flash
+  base_url: https://api.deepseek.com/chat/completions
+  endpoint_label: api.deepseek.com
+- family: kimi
+  model_id_env: KIMI_MODEL_ID
+  api_key_env: KIMI_API_KEY
+  base_url_env: KIMI_BASE_URL
+  main_reasoning: false
+  reasoning_ablation: high_strength_only
+  temperature: 0.6
+  model_id: kimi-k2.6
+  base_url: https://api.moonshot.cn/v1/chat/completions
+  endpoint_label: api.moonshot.cn
+relay_policy:
+  smart_routing: forbidden
+  automatic_fallback: forbidden
+  model_substitution: forbidden
+  automatic_downgrade: forbidden
+  automatic_reasoning_enable: forbidden
+  log_requested_and_returned_model_id: required

@@ -1,0 +1,16 @@
+Recognizing Is Not Reversing
+Copyright 2026 Yi Liu
+
+Author and maintainer: Yi Liu
+University of Science and Technology of China
+Contact: scnuliuyi@mail.ustc.edu.cn
+
+Code and original protocol documentation: Apache-2.0.
+Project-authored benchmark adaptations and annotations: CC BY 4.0.
+Original news contributions retain their upstream licenses.
+
+News sources: Wikinews. Attribution is provided in
+data/sources_attribution.json; data terms are described in data/LICENSE.md.
+
+PyYAML is an external dependency under the MIT license.
+pytest and matplotlib are optional external dependencies.

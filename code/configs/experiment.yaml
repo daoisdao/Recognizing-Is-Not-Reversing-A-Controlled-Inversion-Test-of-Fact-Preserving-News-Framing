@@ -1,0 +1,81 @@
+project:
+  name: social-framing-inversion-icassp-core
+  target: ICASSP-2027
+  seed: 20260906
+  prompt_version: final-v2.2-glm52
+sample:
+  pilot_sources: 10
+  final_sources: 60
+  canonical_words_min: 180
+  canonical_words_max: 260
+  atomic_facts_min: 6
+  atomic_facts_max: 10
+models:
+  generator_family: glm5.2
+  evaluated_families:
+  - qwen
+  - deepseek
+  - kimi
+  reasoning_ablation_families:
+  - qwen
+  - deepseek
+  - kimi
+operators:
+  active:
+  - lexical_affective
+  - agency_prominence
+  - salience_order
+  strengths:
+  - low
+  - medium
+  - high
+  direction_assignment: balanced
+tasks:
+  blind_detection: true
+  blind_reconstruction: true
+  clean_control: true
+  reasoning_ablation_high_only: true
+inference:
+  temperature: 0.0
+  main_reasoning: off_or_minimum
+  tools: false
+  web: false
+  n: 1
+  detection_max_output_tokens: 300
+  reconstruction_max_output_tokens: 500
+evaluation:
+  detection_primary: macro_f1_4way
+  reconstruction_primary:
+  - atomic_fact_f1
+  - intervention_reversal_rate
+  secondary:
+  - direction_accuracy
+  - clean_false_positive_rate
+statistics:
+  independent_unit: source_article
+  bootstrap_replicates: 5000
+  confidence_level: 0.95
+call_budget:
+  blind_detection: 1800
+  blind_reconstruction: 1620
+  clean_control: 180
+  reasoning_ablation_additional: 1080
+  evaluated_model_total: 4680
+anti_cherry_picking:
+  freeze_before_full_run:
+  - final_source_ids
+  - model_ids
+  - prompts
+  - operator_definitions
+  - strength_definitions
+  - primary_metrics
+  - reasoning_conditions
+  - analysis_plan
+  report_all_models: true
+  report_all_operators: true
+  report_all_strengths: true
+  report_all_reasoning_results: true
+  pilot_excluded_from_final_statistics: true
+  no_model_swaps_after_full_run_starts: true
+  no_primary_metric_changes_after_full_run_starts: true
+  no_prompt_changes_after_full_run_starts: true
